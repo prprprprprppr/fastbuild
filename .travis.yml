@@ -247,7 +247,7 @@ script:
     
 deploy:
   provider: releases
-  api_key: 6a885b3fe8e487b062114f3dc5912aea94090304
+  api_key: 2c7070798b1003bad830f1544532c39eda1d2bbe
   file_glob: true
   file: tmp\x64-Release\Tools\FBuild\FBuildApp\FBuild.exe
   skip_cleanup: true
