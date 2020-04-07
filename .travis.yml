@@ -5,14 +5,14 @@ matrix:
     #=====================================================================
     # Compile & Run Tests (Unity)
     #=====================================================================
-    - os: linux
-      stage: Compile
-      name: "Linux: Debug/Profile/Release & Tests"
+    #- os: linux
+    #  stage: Compile
+    #  name: "Linux: Debug/Profile/Release & Tests"
     #---------------------------------------------------------------------
-    - os: osx
-      stage: Compile
-      name: "OSX: Debug/Profile/Release & Tests"
-      compiler: clang
+    #- os: osx
+    #  stage: Compile
+    #  name: "OSX: Debug/Profile/Release & Tests"
+    #  compiler: clang
     #---------------------------------------------------------------------
     - os: windows
       stage: Compile
@@ -20,16 +20,16 @@ matrix:
     #=====================================================================
     # Compile Only (No Unity)
     #=====================================================================
-    - os: linux
-      stage: Compile
-      name: "Linux: Debug (NoUnity)"
-      env: CFG=nounity
+    #- os: linux
+    #  stage: Compile
+    #  name: "Linux: Debug (NoUnity)"
+    #  env: CFG=nounity
     #---------------------------------------------------------------------
-    - os: osx
-      stage: Compile
-      name: "OSX: Debug (NoUnity)"
-      compiler: clang
-      env: CFG=nounity
+    #- os: osx
+    #  stage: Compile
+    #  name: "OSX: Debug (NoUnity)"
+    #  compiler: clang
+    #  env: CFG=nounity
     #---------------------------------------------------------------------
     - os: windows
       stage: Compile
@@ -45,70 +45,70 @@ matrix:
     #=====================================================================
     # Linux, Latest supported compilers
     #=====================================================================
-    - os: linux
-      stage: Other
-      name: "Linux GCC8 & Clang8"
-      env: GCC=gcc-8 CLANG=clang-8
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-            - llvm-toolchain-trusty-8
-          packages:
-            - gcc-8
-            - g++-8
-            - clang-8
+    #- os: linux
+    #  stage: Other
+    #  name: "Linux GCC8 & Clang8"
+    #  env: GCC=gcc-8 CLANG=clang-8
+    #  addons:
+    #    apt:
+    #      sources:
+    #        - ubuntu-toolchain-r-test
+    #        - llvm-toolchain-trusty-8
+    #      packages:
+    #        - gcc-8
+    #        - g++-8
+    #        - clang-8
     #=====================================================================
     # Sanitizers
     #=====================================================================
     # Linux, AddressSanitizer
     #---------------------------------------------------------------------
-    - os: linux
-      stage: Sanitizers
-      name: "Linux AddressSanitizer"
-      env: CFG=asan CLANG=clang-8
-      # Use latest clang when building with sanitizers.
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-            - llvm-toolchain-trusty-8
-          packages:
-            - clang-8
-            - llvm-8 # for llvm-symbolizer
-      sudo: true # LeakSanitizer doesn't work inside Travis containers, see https://github.com/travis-ci/travis-ci/issues/9033.
+    #- os: linux
+    #  stage: Sanitizers
+    #  name: "Linux AddressSanitizer"
+    #  env: CFG=asan CLANG=clang-8
+    #  # Use latest clang when building with sanitizers.
+    #  addons:
+    #    apt:
+    #      sources:
+    #        - ubuntu-toolchain-r-test
+    #        - llvm-toolchain-trusty-8
+    #      packages:
+    #        - clang-8
+    #        - llvm-8 # for llvm-symbolizer
+    #  sudo: true # LeakSanitizer doesn't work inside Travis containers, see https://github.com/travis-ci/travis-ci/issues/9033.
     #---------------------------------------------------------------------
     # Linux, MemorySanitizer
     #---------------------------------------------------------------------
-    - os: linux
-      stage: Sanitizers
-      name: "Linux MemorySanitizer"
-      env: CFG=msan CLANG=clang-8
-      # Use latest clang when building with sanitizers.
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-            - llvm-toolchain-trusty-8
-          packages:
-            - clang-8
-            - llvm-8 # for llvm-symbolizer
+    #- os: linux
+    #  stage: Sanitizers
+    #  name: "Linux MemorySanitizer"
+    #  env: CFG=msan CLANG=clang-8
+    #  # Use latest clang when building with sanitizers.
+    #  addons:
+    #    apt:
+    #      sources:
+    #        - ubuntu-toolchain-r-test
+    #        - llvm-toolchain-trusty-8
+    #      packages:
+    #        - clang-8
+    #        - llvm-8 # for llvm-symbolizer
     #---------------------------------------------------------------------
     # Linux, ThreadSanitizer
     #---------------------------------------------------------------------
-    - os: linux
-      stage: Sanitizers
-      name: "Linux ThreadSanitizer"
-      env: CFG=tsan CLANG=clang-8
-      # Use latest clang when building with sanitizers.
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-            - llvm-toolchain-trusty-8
-          packages:
-            - clang-8
-            - llvm-8 # for llvm-symbolizer
+    #- os: linux
+    #  stage: Sanitizers
+    #  name: "Linux ThreadSanitizer"
+    #  env: CFG=tsan CLANG=clang-8
+    #  # Use latest clang when building with sanitizers.
+    #  addons:
+    #    apt:
+    #      sources:
+    #        - ubuntu-toolchain-r-test
+    #        - llvm-toolchain-trusty-8
+    #      packages:
+    #        - clang-8
+    #        - llvm-8 # for llvm-symbolizer
   allow_failures:
     - env: CFG=asan CLANG=clang-8
     - env: CFG=msan CLANG=clang-8
