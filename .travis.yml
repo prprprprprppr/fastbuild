@@ -38,10 +38,10 @@ matrix:
     #=====================================================================
     # Static Analysis
     #=====================================================================
-    #- os: windows
-    #  stage: StaticAnalysis
-    #  name: "Windows Analyze"
-    #  env: CFG=analyze
+    - os: windows
+      stage: StaticAnalysis
+      name: "Windows Analyze"
+      env: CFG=analyze
     #=====================================================================
     # Linux, Latest supported compilers
     #=====================================================================
@@ -179,7 +179,6 @@ install:
       ${SUCCESS}
     ;;
     esac
-
 script:
   - cd Code
   # Inject a #define into root configs to activate CI logic.
