@@ -31,17 +31,17 @@ matrix:
     #  compiler: clang
     #  env: CFG=nounity
     #---------------------------------------------------------------------
-    - os: windows
-      stage: Compile
-      name: "Windows: Debug (NoUnity)"
-      env: CFG=nounity
+    #- os: windows
+    #  stage: Compile
+    #  name: "Windows: Debug (NoUnity)"
+    #  env: CFG=nounity
     #=====================================================================
     # Static Analysis
     #=====================================================================
-    - os: windows
-      stage: StaticAnalysis
-      name: "Windows Analyze"
-      env: CFG=analyze
+    #- os: windows
+    #  stage: StaticAnalysis
+    #  name: "Windows Analyze"
+    #  env: CFG=analyze
     #=====================================================================
     # Linux, Latest supported compilers
     #=====================================================================
@@ -245,9 +245,9 @@ script:
         ;;
     esac
     
-#deploy:
-#  provider: releases
-#  api_key: 6a885b3fe8e487b062114f3dc5912aea94090304
-#  file_glob: true
-#  file: tmp/*
-#  skip_cleanup: true
+deploy:
+  provider: releases
+  api_key: 6a885b3fe8e487b062114f3dc5912aea94090304
+  file_glob: true
+  file: tmp\x64-Release\Tools\FBuild\FBuildApp\FBuild.exe
+  skip_cleanup: true
