@@ -249,5 +249,5 @@ deploy:
   provider: releases
   api_key: 2c7070798b1003bad830f1544532c39eda1d2bbe
   file_glob: true
-  file: ../Code/fbuild.bff
+  file: Core/*
   skip_cleanup: true
