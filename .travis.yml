@@ -38,10 +38,10 @@ matrix:
     #=====================================================================
     # Static Analysis
     #=====================================================================
-    - os: windows
-      stage: StaticAnalysis
-      name: "Windows Analyze"
-      env: CFG=analyze
+    #- os: windows
+    #  stage: StaticAnalysis
+    #  name: "Windows Analyze"
+    #  env: CFG=analyze
     #=====================================================================
     # Linux, Latest supported compilers
     #=====================================================================
