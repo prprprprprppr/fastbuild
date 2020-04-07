@@ -245,9 +245,9 @@ script:
         ;;
     esac
     
-deploy:
-  provider: releases
-  api_key: 6a885b3fe8e487b062114f3dc5912aea94090304
-  file_glob: true
-  file: tmp/*
-  skip_cleanup: true
+#deploy:
+#  provider: releases
+#  api_key: 6a885b3fe8e487b062114f3dc5912aea94090304
+#  file_glob: true
+#  file: tmp/*
+#  skip_cleanup: true
