@@ -2,10 +2,11 @@ language: cpp
 
 deploy:
   provider: releases
-  api_key: "GITHUB OAUTH TOKEN"
-  file: "FILE TO UPLOAD"
+  api_key: 93a288af4fc4f4ef1f1a06adc775de464e467d12 
+  file: FBuild.exe
   skip_cleanup: true
-  draft: true
+  on: 
+    tags: true
 
 matrix:
   include:
