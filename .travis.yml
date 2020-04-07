@@ -5,8 +5,7 @@ deploy:
   api_key: 93a288af4fc4f4ef1f1a06adc775de464e467d12 
   file: FBuild.exe
   skip_cleanup: true
-  on: 
-    tags: true
+  draft: true
 
 matrix:
   include:
